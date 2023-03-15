@@ -27,3 +27,4 @@ AzureMigration.ps1
 
 # Pycharm
 .idea/*
+azure/
