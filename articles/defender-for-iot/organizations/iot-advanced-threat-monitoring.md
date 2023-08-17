@@ -100,7 +100,7 @@ After you’ve [configured your Defender for IoT data to trigger new incidents i
 
     - Learn about recommended remediation steps by selecting an alert in the incident timeline and viewing the **Remediation steps** area.
 
-    - Select an IoT device entity from the **Entities** list to open its [device entity page](/azure/sentinel/entity-pages). For more information, see [Investigate further with IoT device entities](#investigate-further-with-iot-device-entities). 
+    - Select an IoT device entity from the **Entities** list to open its [device entity page](../../sentinel/entity-pages.md). For more information, see [Investigate further with IoT device entities](#investigate-further-with-iot-device-entities). 
 
 For more information, see [Investigate incidents with Microsoft Sentinel](../../sentinel/investigate-cases.md).
 
@@ -121,7 +121,7 @@ For more information, see [Investigate entities with entity pages in Microsoft S
 
 ### Investigate the alert in Defender for IoT
 
-To open an alert in Defender for IoT for further investigation, go to your incident details page and select  **Investigate in Microsoft Defender for IoT**. For example:
+To open an alert in Defender for IoT for further investigation, including the ability to [access alert PCAP data](how-to-manage-cloud-alerts.md#access-alert-pcap-data), go to your incident details page and select  **Investigate in Microsoft Defender for IoT**. For example:
 
 :::image type="content" source="media/iot-solution/investigate-in-iot.png" alt-text="Screenshot of the Investigate in Microsoft Defender for IoT option.":::
 

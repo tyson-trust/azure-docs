@@ -41,7 +41,7 @@ In the Azure portal, the **Impacted Resources** tab under **Service Health** > *
 |---------|---------|
 |**Subscription ID**|Unique ID for the subscription that contains the impacted resource|
 |**Subscription Name**|Subscription name for the subscription that contains the impacted resource|
-|**Tenant Name**|Unique ID for the tenant that contains the impacted resource|
+|**Tenant Name**|Tenant name for the tenant that contains the impacted resource|
 |**Tenant ID**|Unique ID for the tenant that contains the impacted resource|
 
 The following examples show a security incident with impacted resources from the subscription and tenant scope.
@@ -57,7 +57,7 @@ The following examples show a security incident with impacted resources from the
 
 ## Accessing Impacted Resources programmatically via an API
 
-Impacted resource information for security incidents can be retrieved programmatically using the Events API. To access the list of resources impacted by a security incident, users authorized with the above-mentioned roles can use the following endpoints.
+Impacted resource information for security incidents can be retrieved programmatically using the Events API. To access the list of resources impacted by a security incident, users authorized with the above-mentioned roles can use the endpoints below. For details on how to access this data, see the [API documentation](/rest/api/resourcehealth/2022-10-01/security-advisory-impacted-resources).
 
 **Subscription**
 

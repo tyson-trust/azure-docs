@@ -26,6 +26,9 @@ You'll need to store your container images in an Azure Container Registry (ACR) 
 
 The below example uses the [`az acr create`][az-acr-create] command to create an ACR named *myhelmacr* in *myResourceGroup* with the *Basic* SKU.
 
+> [!NOTE]
+> The ACR name that you choose must be unique across the `azurecr.io` domain. If you specify an existing ACR name, an error is returned and the ACR is not created.
+
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 az acr create --resource-group MyResourceGroup --name myhelmacr --sku Basic
@@ -302,7 +305,7 @@ For more information about using Helm, see the [Helm documentation][helm-documen
 [az-aks-install-cli]: /cli/azure/aks#az_aks_install_cli
 [install-azakskubectl]: /powershell/module/az.aks/install-azaksclitool
 [azure-vote-app]: https://github.com/Azure-Samples/azure-voting-app-redis.git
-[kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
+[kubectl]: https://kubernetes.io/docs/reference/kubectl/
 [helm]: https://helm.sh/
 [helm-documentation]: https://helm.sh/docs/
 [helm-existing]: kubernetes-helm.md

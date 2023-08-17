@@ -8,7 +8,7 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 03/14/2023
+ms.date: 03/17/2023
 ms.author: kenwith
 ms.reviewer: arvinh
 ---
@@ -171,7 +171,7 @@ The Azure AD Provisioning Services is designed to support a SCIM 2.0 user manage
 > [!IMPORTANT]
 > The behavior of the Azure AD SCIM implementation was last updated on December 18, 2018. For information on what changed, see [SCIM 2.0 protocol compliance of the Azure AD User Provisioning service](application-provisioning-config-problem-scim-compatibility.md).
 
-Within the [SCIM 2.0 protocol specification](http://www.simplecloud.info/#Specification), your application must support these requirements:
+Within the SCIM 2.0 protocol specification, your application must support these requirements:
 
 |Requirement|Reference notes (SCIM protocol)|
 |---|---|
@@ -1202,7 +1202,7 @@ In the example of a request, to retrieve the current state of a user, the values
 
 ***Example 4. Query the value of a reference attribute to be updated*** 
 
-If a reference attribute is to be updated, then Azure AD queries the service to determine whether the current value of the reference attribute in the identity store fronted by the service already matches the value of that attribute in Azure AD. For users, the only attribute of which the current value is queried in this way is the manager attribute. Here's an example of a request to determine whether the manager attribute of a user object currently has a certain value: 
+Azure AD checks the current attribute value in the identity store before updating it. However, only the manager attribute is the checked first for users. Here's an example of a request to determine whether the manager attribute of a user object currently has a certain value: 
 In the sample code, the request is translated into a call to the QueryAsync method of the service’s provider. The value of the properties of the object provided as the value of the parameters argument are as follows: 
   
 * parameters.AlternateFilters.Count: 2
@@ -1304,7 +1304,9 @@ Check with your application provider, or your application provider's documentati
 
 ### Getting started
 
-Applications that support the SCIM profile described in this article can be connected to Azure AD using the "non-gallery application" feature in the Azure AD application gallery. Once connected, Azure AD runs a synchronization process every 40 minutes where it queries the application's SCIM endpoint for assigned users and groups, and creates or modifies them according to the assignment details.
+[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
+
+Applications that support the SCIM profile described in this article can be connected to Azure AD using the "non-gallery application" feature in the Azure AD application gallery. Once connected, Azure AD runs a synchronization process. The process runs every 40 minutes. The process queries the application's SCIM endpoint for assigned users and groups, and creates or modifies them according to the assignment details.
 
 **To connect an application that supports SCIM:**
 
@@ -1362,6 +1364,7 @@ Use the checklist to onboard your application quickly and customers have a smoot
 > * Establish engineering and support contacts to guide customers post gallery onboarding (Required)
 > * 3 Non-expiring test credentials for your application (Required)
 > * Support the OAuth authorization code grant or a long lived token as described in the example (Required)
+> * OIDC apps must have at least 1 role (custom or default) defined
 > * Establish an engineering and support point of contact to support customers post gallery onboarding (Required)
 > * [Support schema discovery (required)](https://tools.ietf.org/html/rfc7643#section-6)
 > * Support updating multiple group memberships with a single PATCH
@@ -1398,11 +1401,11 @@ The provisioning service supports the [authorization code grant](https://tools.i
 > [!NOTE]
 > OAuth v1 is not supported due to exposure of the client secret. OAuth v2 is supported.  
 
-It is recommended, but not required, that you support multiple secrets for easy renewal without downtime.
+It's recommended, but not required, that you support multiple secrets for easy renewal without downtime.
 
 #### How to set up OAuth code grant flow
 
-1. Sign in to the Azure portal, go to **Enterprise applications** > **Application** > **Provisioning** and select **Authorize**.
+1. Sign in to the [Azure portal](https://portal.azure.com), go to **Enterprise applications** > **Application** > **Provisioning** and select **Authorize**.
 
    1. Azure portal redirects user to the Authorization URL (sign in page for the third party app).
 

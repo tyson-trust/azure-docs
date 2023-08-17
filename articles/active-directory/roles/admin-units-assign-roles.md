@@ -1,5 +1,5 @@
 ---
-title: Assign or list Azure AD roles with administrative unit scope - Azure Active Directory | Microsoft Docs
+title: Assign or list Azure AD roles with administrative unit scope
 description: Use administrative units to restrict the scope of role assignments in Azure Active Directory.
 services: active-directory
 documentationcenter: ''
@@ -12,7 +12,7 @@ ms.workload: identity
 ms.date: 11/15/2022
 ms.author: rolyon
 ms.reviewer: anandy
-ms.custom: oldportal;it-pro;
+ms.custom: oldportal, it-pro, has-azure-ad-ps-ref
 ms.collection: M365-identity-device-management
 ---
 
@@ -78,6 +78,8 @@ It is not currently possible to assign directory read permissions scoped to an a
 You can assign an Azure AD role with an administrative unit scope by using the Azure portal, PowerShell, or Microsoft Graph.
 
 ### Azure portal
+
+[!INCLUDE [portal updates](~/articles/active-directory/includes/portal-update.md)]
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
 
